@@ -1,8 +1,5 @@
-WORKING MEMORY FROM HCP
------------------------------
-Preprocessing done by sfvn
-(sfvn at dtu dot dk)
------------------------------
+# WORKING MEMORY FROM HCP
+Preprocessing done by sfvn (sfvn at dtu dot dk)
 
 Analysis and preprocessing of the working memory task from 100 subjects
 taken from the human connectome project (HCP) [1]
@@ -21,32 +18,27 @@ using the average temporal correlation.
 Furthermore, an atlas based on the Harvard-Oxford parcellation was extracted, 
 also using spatial smoothing (FWHM 6 mm) and high-pass filtering at 0.008 Hz.
 
-Data for further analysis is located in:
-wm_ica_ts_d50_sorted.mat  		(time-courses, numpy-array 'X' with shape (n_subjects, n_timepoints, n_ica_comps))
-wm_ica_components_d50.nii.gz	(spatial images) (visualized in the folder 'comps_imgs/*.png')
-wm_ho_atlas_tc.mat				(time-courses, numpy-array 'X' with shape (n_subjects, n_timepoints, n_atlas_parcels)) 
-wm_eventinfo.mat				(event information about the task)
-
---------------------
-!!!! ICA INFO
-NB! Component 2  (0-indexed) looks like a CSF-component  (respiatory effect)
-SHOULD BE REMOVED
-!!!!
----------------------
-
-Python environment used is located at:
-/dtu-compute/brainconnectivity/Data/miniconda3/envs/py36
-
-can be activated by calling:
-source /dtu-compute/brainconnectivity/Data/miniconda3/envs/py36/bin/activate
-
+#### Function Calls
 Scripts in this folder have been run in the following order:
-./copySubjects.sh
+./copySubjects.sh (not in Git)
 python runICA.py
 python plotEVs.py
 python rankICAcomps.py
 python extractAtlas.py
 
+After executing scripts, data for further analysis is located in:
+wm_ica_ts_d50_sorted.mat  		(time-courses, numpy-array 'X' with shape (n_subjects, n_timepoints, n_ica_comps))
+wm_ica_components_d50.nii.gz	(spatial images) (visualized in the folder 'comps_imgs/*.png')
+wm_ho_atlas_tc.mat				(time-courses, numpy-array 'X' with shape (n_subjects, n_timepoints, n_atlas_parcels)) 
+wm_eventinfo.mat				(event information about the task)
+
+
+#### ICA INFO
+NB! Component 2  (0-indexed) looks like a CSF-component  (respiatory effect)
+SHOULD BE REMOVED
+
+
+#### References
 
 [1] Barch, D. M., Burgess, G. C., Harms, M. P., Petersen, S. E., Schlaggar, 
 	B. L., Corbetta, M., ... WU-Minn HCP Consortium. (2013). 
