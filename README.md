@@ -20,11 +20,18 @@ also using spatial smoothing (FWHM 6 mm) and high-pass filtering at 0.008 Hz.
 
 #### Function Calls
 Scripts in this folder have been run in the following order:
+
+```
 ./copySubjects.sh (not in Git)
+
 python runICA.py
+
 python plotEVs.py
+
 python rankICAcomps.py
+
 python extractAtlas.py
+```
 
 After executing scripts, data for further analysis is located in:
 wm_ica_ts_d50_sorted.mat  		(time-courses, numpy-array 'X' with shape (n_subjects, n_timepoints, n_ica_comps))
