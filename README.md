@@ -34,9 +34,7 @@ wm_eventinfo.mat				(event information about the task)
 
 
 #### ICA INFO
-NB! Component 2  (0-indexed) looks like a CSF-component  (respiatory effect)
-SHOULD BE REMOVED
-
+NB! Remember to visually inspect the components for movement and respiatory effects 
 
 #### References
 
